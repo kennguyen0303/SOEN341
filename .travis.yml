@@ -16,3 +16,4 @@ script:
     github-token: $GITHUB_TOKEN
     on:
       branch: master
+      //
