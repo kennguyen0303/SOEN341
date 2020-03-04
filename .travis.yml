@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-- 11.6.0
+- 12.14.1
 cache: npm
 
 install:
@@ -16,4 +16,4 @@ script:
     github-token: $GITHUB_TOKEN
     on:
       branch: master
-      //
+      ////
