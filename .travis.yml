@@ -10,7 +10,7 @@ script:
   -npm test
   -npm run build
 
-  deply:
+  deploy:
     provider: pages
     skip-cleanup: true
     github-token: $GITHUB_TOKEN
