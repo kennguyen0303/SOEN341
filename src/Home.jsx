@@ -3,6 +3,8 @@ import { Route, BrowserRouter } from "react-router-dom";
 import { connect } from "react-redux"; // connect to redux
 import Upload from "./Upload.jsx";
 import Profile from "./Profile.jsx";
+import Follower from "./follower.js";
+
 
 class UnconnectedHome extends Component {
   //redux between home and sotre for upload pictures.
@@ -34,6 +36,7 @@ class UnconnectedHome extends Component {
       <BrowserRouter>
         <Route exact={true} path="/" render={this.renderProfile} />
         <Route exact={true} path="/upload" render={this.renderUpload} />
+        <Route exact path="/follower" component={Follower}/>
       </BrowserRouter>
     );
   }

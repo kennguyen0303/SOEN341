@@ -41,6 +41,17 @@ class UnconnectedProfile extends Component {
           <Link to="/upload">
             <button className="profile-btn">Add Picture</button>
           </Link>
+          <Link to="/follower">
+            <button className="profile-btn">Follower</button>
+          </Link>
+          <div class='dropdown'>
+            <button className='profile-btn'>Settings</button>
+            <div className='dropdown-content'>
+              <a href='#'>I am still thinking</a>
+              <a href='#'>I am still studying</a>
+              <a href='#'>I am still learning</a>
+            </div>
+          </div>
         </div>
         {this.props.post
           .filter(e => e.username === this.props.mainUser)
