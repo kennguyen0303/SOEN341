@@ -9,10 +9,18 @@ class UnconnectedApp extends Component {
     super(props);
     this.state = { username: "" };
   }
+  componentDidMount = async () => {
+    let response = await fetch("/all-users");
+    let body = await response.text();
+    console.log("/all-users response", body);
+    body = JSON.parse(body);
+    this.setState({ user: body });
+    this.props.dispatch({ type: "SET_USER", users: body });
+  };
+
   setUsername = username => {
     this.setState({ username: username });
   };
-
   render() {
     if (this.props.snup) {
       return <Login username={this.setUsername} />;
@@ -23,7 +31,6 @@ class UnconnectedApp extends Component {
     return <Signup />;
   }
 }
-
 let mapStateToProps = state => {
   return { snup: state.signup, login: state.loggedIn };
 };
