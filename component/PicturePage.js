@@ -22,7 +22,9 @@ const PicturePage =({path}) => {
             <h2>Hello Picture ne</h2>
            <img src={path} alt="picture_content" height="42" width="42"/>
            <br/>
-           <textarea placeholder="write something">Write some thing here </textarea>
+           <form type="post">
+               <input placeholder="Write some comment" type="text"/>
+           </form>
         </div>
     )
 }
