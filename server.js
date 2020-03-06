@@ -57,6 +57,8 @@ app.post("/new-post", upload.single("img"), (req, res) => {
     username: req.body.username,
     description: req.body.description,
     frontendPath: frontendPath
+  },(req,res)=>{
+    console.log(res.insertedId);
   });
   res.send(JSON.stringify({ success: true }));
 });

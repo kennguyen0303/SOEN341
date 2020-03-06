@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+import NavBar from "./navbar";
 
 class UnconnectedProfile extends Component {
   constructor(props) {
@@ -24,20 +25,14 @@ class UnconnectedProfile extends Component {
 
     return (
       <div>
-        <input placeholder="Search" onChange={this.handleSearch} />
-        <div>
-          {this.state.results.map(e => {
-            return <div>{e.username}</div>;
-          })}
-        </div>
-        <h1 className="test">
-          <img height="100px" src={profileUser.frontendPath} />
-          Welcome, {this.props.mainUser}!
-        </h1>
-        {/* <img height="100px" src={profileUser.frontendPath} /> */}
-        <div className="push-profile-btns">
-          <button className="profile-btn">Edit Profile</button>
-          <button className="profile-btn">Following</button>
+        <NavBar/>
+        <div className="container">
+          <Link to="/edit_profile">
+            <button className="profile-btn">Edit Profile</button>
+          </Link>
+          <Link to="/following">
+            <button className="profile-btn">Following</button>
+          </Link>
           <Link to="/upload">
             <button className="profile-btn">Add Picture</button>
           </Link>
@@ -53,13 +48,15 @@ class UnconnectedProfile extends Component {
             </div>
           </div>
         </div>
+        
         {this.props.post
           .filter(e => e.username === this.props.mainUser)
           .map(e => {
             return (
               <div className="picsadded">
-                <img height="50%" width="50%" src={e.frontendPath} />
-                <div>{e.description}</div>
+                <Link to={`/picture/${e._id}`} className="btn btn-dark btn-sm my-1">
+                    <img height="50%" width="50%" src={e.frontendPath} />
+                 </Link>
               </div>
             );
           })}

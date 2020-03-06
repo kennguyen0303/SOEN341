@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-//this is where to design the follower page
+//this is where to design the
 class Follower extends Component {
   constructor() {
     super();

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-
+//this is the route for uploading, not uploading function watchout
 class Upload extends Component {
   constructor() {
     super();
